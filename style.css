@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+/* font-family: 'Fraunces', serif; */
+/* font-family: 'Barlow', sans-serif; */
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+body{
+    font-size: 18px;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem ;
+    position: relative;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul li{
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+}
+nav ul .btn{
+    font-size: 0.9rem;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(212, 27%, 19%);
+    padding: 1.1rem 1.7rem;
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    transition: background 200ms ease-out;
+}
+nav ul .btn:hover{
+    background-color: hsl(0, 0%, 100%, 0.200);
+}
+nav .nav__manu__btn{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    display: none;
+}
+@media (max-width:768px) {
+      nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        gap: 1.5rem;
+        background-color: hsl(0, 0%, 100%);
+        position: absolute;
+        top: 8rem;
+        right: 2rem;
+        z-index: 10;
+        padding: 4rem;
+        margin-left: 1rem;
+        opacity: 0;
+        transition: opacity 200ms ease-in;
+    }
+    nav ul::before{
+        content: '';
+        position: absolute;
+        top: -19px;
+        right: -20px;
+        border: 20px solid transparent;
+        border-left-color: hsl(0, 0%, 100%);
+        transform: rotate(45deg);
+    }
+    nav ul.active2{
+        opacity: 1;
+    }
+    nav ul li{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: hsl(210, 4%, 67%);
+    }
+    nav .nav__manu__btn{
+        display: block;
+    }
+    nav .nav__manu__btn.active1{
+        opacity: 0.4;
+    }
+    nav ul .btn{
+        background-color: hsl(51, 100%, 49%);
+        padding: 1rem 2rem;
+    }
+    nav ul .btn:hover{
+        background-color: hsl(51, 100%, 62%);
+    }
+}
+header .header__content{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 4rem;
+    text-align: center;
+    position: absolute;
+    top: 41%;
+    transform: translateY(-50%);
+}
+header .header__content .main__heading{
+    font-size: 3.5rem;
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+}
+header .header__content .arrow___svg{
+    width: 2.5rem;
+    align-self: center;
+}
+/* /////////////////////////////////////////////header wraps///////////////////////////////////////////////// */
+
+
+/* ///////////////////////////////////////////////main starts//////////////////////////////////////////////////// */
+.main__container{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+.main__container .box__1 picture,.main__container .box__3 picture{
+    width: 100%;
+    height: 100%;
+}
+.main__container .box__1 picture img,.main__container .box__3 picture img{
+    width: 100%;
+    height: 100%;
+}
+.main__container .box__2,.box__4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+.main__container .box__2 h2,main .box__4 h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: hsl(212, 27%, 19%);
+}
+.main__container .box__2 p,main .box__4 p{
+    color:  hsl(213, 9%, 39%);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-family: 'Barlow', sans-serif;
+}
+
+.main__container .box__2 button,main .box__4 button{
+    display: inline-block;
+    border: none;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.main__container .box__2 button::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    left: -4.5%;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    border-radius: 100px;
+    height: 10px;
+    width: 110%;
+    background-color: hsl(51, 100%, 49%);
+    opacity: 0.4;
+    
+}
+main .box__4 button::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    left: -4.5%;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    border-radius: 100px;
+    height: 10px;
+    width: 110%;
+    background-color: hsl(7, 99%, 70%);
+    opacity: 0.4;
+}
+.main__container .box__2 button:hover::before,main .box__4 button:hover::before{
+    opacity: 1;
+}
+@media (min-width:768px){
+    .main__container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    .main__container .box__1{
+        grid-column: 2/-1;
+    }
+    .main__container .box__2{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.main__container__2{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-rows: repeat(2,1fr);
+}
+
+.main__container__2 .box__5 picture,.main__container__2 .box__6 picture{
+    width: 100%;
+    height: 100%;
+}
+.main__container__2 .box__5 picture img,.main__container__2 .box__6 picture img{
+    width: 100%;
+    height: 100%;
+}
+
+.main__container__2 .box__5,.main__container__2 .box__6{
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
+.main__container__2 .box__5 .content,.main__container__2 .box__6 .content{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    padding: 1rem;
+}
+.main__container__2 .box__5 .content h2{
+    color: hsl(167, 40%, 24%);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.main__container__2 .box__5 .content p{
+    color: hsl(167, 40%, 24%);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.main__container__2 .box__6 .content h2{
+    color: hsl(198, 62%, 26%);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.main__container__2 .box__6 .content p{
+    color: hsl(198, 62%, 26%);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+@media (min-width:768px){
+    .main__container__2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+.main__container__3{
+    display: grid;
+    padding: 2rem 1rem;
+}
+.main__container__3__box{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    margin: 3rem 1rem;
+    gap: 3rem;
+}
+.main__container__3 h3{
+    text-align: center;
+    color: hsl(210, 4%, 67%);
+    font-size: 1.5rem;
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.main__container__3 .main__container__3__box__1,
+.main__container__3 .main__container__3__box__2,
+.main__container__3 .main__container__3__box__3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+.main__container__3 .main__container__3__box__1 img,
+.main__container__3 .main__container__3__box__2 img,
+.main__container__3 .main__container__3__box__3 img{
+    border-radius: 100%;
+    width: 6rem;
+}
+.main__container__3 .main__container__3__box__1 p,
+.main__container__3 .main__container__3__box__2 p,
+.main__container__3 .main__container__3__box__3 p{
+    color: hsl(213, 9%, 39%);
+    line-height: 1.4;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+}
+.main__container__3 .main__container__3__box__1 div,
+.main__container__3 .main__container__3__box__2 div,
+.main__container__3 .main__container__3__box__3 div{
+    font-family: 'Fraunces', serif; 
+    color: hsl(212, 27%, 19%);
+    font-size: 1.3rem;
+}
+.main__container__3 .main__container__3__box__1 span,
+.main__container__3 .main__container__3__box__2 span,
+.main__container__3 .main__container__3__box__3 span{
+    color: hsl(210, 4%, 67%);
+    font-size: 0.9rem;
+    font-family: 'Barlow', sans-serif;
+}
+@media (min-width:768px){
+    .main__container__3__box{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+        margin: 3rem 3rem;
+        gap: 3rem;
+    }
+    .main__container__3{
+        display: grid;
+        padding: 6rem 0;
+    }
+}
+
+
+
+/* font-family: 'Fraunces', serif; 
+ font-family: 'Barlow', sans-serif; */
+.main__container__4{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.main__container__4 div picture{
+    height: 100%;
+    width: 100%;
+}
+.main__container__4 div picture img{
+    height: 100%;
+    width: 100%;
+}
+@media (min-width:768px){
+    .main__container__4{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+
+
+footer{
+    background-color: hsl(168, 76%, 72%);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+}
+footer div{
+    font-size: 3rem;
+    font-family: 'Fraunces', serif;
+    color: hsl(168, 34%, 41%);
+    font-weight: 900;
+}
+footer ul{
+    display: flex;
+    gap: 2rem;
+    color: hsl(168, 34%, 41%);
+    font-family: 'Barlow', sans-serif;
+}
+footer ul li{
+    cursor: pointer;
+}
+footer .icons{
+    display: flex;
+    gap: 2rem;
+}
